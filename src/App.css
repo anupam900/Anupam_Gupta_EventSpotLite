@@ -1,38 +1,64 @@
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
 .App {
-  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background-video video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+  filter: brightness(50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.content-container {
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.MuiAppBar-root {
+  background-color: rgba(40, 44, 52, 0.9); /* Transparent background for the navbar */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MuiTypography-h6 {
+  flex-grow: 1;
+}
+
+.MuiButton-root {
+  margin-left: 10px;
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.event-card {
+  animation: fadeIn 0.5s ease-in;
 }
